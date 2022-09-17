@@ -1,2 +1,2 @@
-# AutoCastContainer
-Containerized AutoCast dev/test environment!
+# AutoCast Container
+A containerized dev/test environment for AutoCast!
