@@ -1,2 +1,0 @@
-# Containerized AutoCast
-**Private README**
