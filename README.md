@@ -1,6 +1,6 @@
 # AutoCast Container
 
-A containerized dev/test environment for AutoCast!
+A containerized dev/test environment for [AutoCast](https://github.com/hangqiu/autocast)
 
 ### Instant images (just add hot water!)
 
