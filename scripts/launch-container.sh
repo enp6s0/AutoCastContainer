@@ -5,10 +5,13 @@
 # =================================================================================================
 version=$(cat /CONTAINER_VERSION)
 build=$(cat /CONTAINER_BUILD)
+container_ip=$(hostname -I)
 echo ""
 echo "$version [CONTAINER]"
 echo ""
 echo "Build: $build"
+echo ""
+echo "Container IP address: $container_ip"
 echo ""
 
 # =================================================================================================

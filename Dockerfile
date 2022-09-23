@@ -67,7 +67,7 @@ RUN pip3 install MinkowskiEngine --install-option="--blas=openblas" -v --no-deps
 RUN apt purge -y python3-networkx
 
 # Cache buster for AutoCast, so we can pull the latest code in
-ENV AUTOCAST_CACHE_BUSTER_V=1
+ENV AUTOCAST_CACHE_BUSTER_V=2
 
 # Submodule things doesn't work in here (lack of SSH and a signed-in user, so let's do this for now)
 RUN git clone https://github.com/hangqiu/AutoCast.git /opt/autocast
@@ -102,6 +102,10 @@ RUN mkdir -p /opt/autocast/.local/share/code-server/User
 RUN echo '{"workbench.colorTheme": "Default Dark+"}' > /opt/autocast/.local/share/code-server/User/settings.json
 RUN chown -R autocast /opt/autocast/.local
 EXPOSE 9001
+
+# Make git ignore ownership stuff
+RUN git config --global --add safe.directory /opt/autocast
+RUN git config --global --add safe.directory /opt/autocast/AutoCastSim
 
 # ======================================================================================
 # Because we're copying in files, ANYTHING below this line WILL be run every time
